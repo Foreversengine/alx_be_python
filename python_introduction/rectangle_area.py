@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 #Define the length and breadth of the rectangle
 length = 10
 width = 5
