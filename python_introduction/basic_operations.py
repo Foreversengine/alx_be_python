@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #Define the length and breadth of the rectangle
 number1 = 10
 number2 = 5
@@ -6,8 +7,11 @@ number2 = 5
 Area = number1 * number2
 
 #Print the calculated area
-print(f"The Area of the rectangle is {50}")
+print("The Area of the rectangle is {50}")
 
 #Addition and subtraction of these numbers
-addition = length + width
-subtraction = length - width
+addition = number1 + number2
+subtraction = number1 - number2
+
+print("The addition of length and width is: {addition}")
+print("The subtraction of length and width is: {subtraction}")
