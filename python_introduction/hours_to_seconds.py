@@ -1,5 +1,5 @@
+#!/usr/bin/python3
 #Convert 2 hours into seconds
-
 hours = 2
 
 # Calculate the number of seconds
