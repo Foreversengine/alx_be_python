@@ -4,7 +4,7 @@ length = 10
 width = 5
 
 #Calculate the area of the rectangle
-Area = length * width 
+area = length * width 
 
 #Print the calculated area
 print("The Area of the rectangle is: {50}")
