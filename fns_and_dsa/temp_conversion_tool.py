@@ -8,34 +8,36 @@ def convert_to_celsius(fahrenheit):
     """
     Convert a temperature from Fahrenheit to Celsius.
     """
+    global FAHRENHEIT_TO_CELSIUS_FACTOR
     return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
     """
     Convert a temperature from Celsius to Fahrenheit.
     """
+    global CELSIUS_TO_FAHRENHEIT_FACTOR
     return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
     """
-    Main function to handle user interaction for temperature conversion.
+    Main function to handle user input and conversion logic.
     """
     try:
         # Prompt the user to enter a temperature
         temp_input = input("Enter the temperature to convert: ").strip()
         if not temp_input.replace('.', '', 1).lstrip('-').isdigit():
             raise ValueError("Invalid temperature. Please enter a numeric value.")
-
+        
         temperature = float(temp_input)
 
         # Prompt the user to specify the unit
         unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
         if unit == 'C':
-            # Convert from Celsius to Fahrenheit
+            # Convert Celsius to Fahrenheit
             converted_temp = convert_to_fahrenheit(temperature)
             print(f"{temperature:.1f}°C is {converted_temp:.1f}°F")
         elif unit == 'F':
-            # Convert from Fahrenheit to Celsius
+            # Convert Fahrenheit to Celsius
             converted_temp = convert_to_celsius(temperature)
             print(f"{temperature:.1f}°F is {converted_temp:.1f}°C")
         else:
