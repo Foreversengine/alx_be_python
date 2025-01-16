@@ -14,7 +14,7 @@ def display_menu():
 
 def main():
     """
-    Main function to handle the shopping list management logic.
+    Main function to manage the shopping list.
     """
     shopping_list = []  # Initialize an empty shopping list
 
@@ -29,16 +29,19 @@ def main():
                 shopping_list.append(item)
                 print(f"'{item}' has been added to the shopping list.")
             else:
-                print("Item cannot be empty.")
+                print("Error: Item cannot be empty. Please try again.")
 
         elif choice == '2':
             # Remove an item from the shopping list
-            item = input("Enter the item to remove: ").strip()
-            if item in shopping_list:
-                shopping_list.remove(item)
-                print(f"'{item}' has been removed from the shopping list.")
+            if not shopping_list:
+                print("The shopping list is empty. There's nothing to remove.")
             else:
-                print(f"'{item}' is not in the shopping list.")
+                item = input("Enter the item to remove: ").strip()
+                if item in shopping_list:
+                    shopping_list.remove(item)
+                    print(f"'{item}' has been removed from the shopping list.")
+                else:
+                    print(f"'{item}' is not in the shopping list.")
 
         elif choice == '3':
             # View the shopping list
@@ -51,11 +54,11 @@ def main():
 
         elif choice == '4':
             # Exit the program
-            print("Goodbye!")
+            print("Goodbye! Thank you for using the Shopping List Manager.")
             break
 
         else:
-            # Handle invalid choices
+            # Handle invalid menu choices
             print("Invalid choice. Please enter a number between 1 and 4.")
 
 if __name__ == "__main__":
